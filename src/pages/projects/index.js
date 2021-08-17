@@ -16,7 +16,7 @@ export default function Projects({ data }) {
             <Link to={"/projects/" + project.frontmatter.slug} 
             key={project.id}>
               <div>
-              <GatsbyImage image={project.frontmatter.thumb.childImageSharp.gatsbyImageData} alt={project.frontmatter.title} />
+              <GatsbyImage className={styles.images} image={project.frontmatter.thumb.childImageSharp.gatsbyImageData} alt={project.frontmatter.title} />
                 <h3>{ project.frontmatter.title }</h3>
                 <p>{ project.frontmatter.stack }</p>
               </div>

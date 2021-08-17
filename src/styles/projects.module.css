@@ -24,3 +24,15 @@
   color: #ccc;
   margin-top: 4px;
 }
+.images:hover {
+  animation: grow 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
