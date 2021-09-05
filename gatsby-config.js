@@ -32,6 +32,13 @@ module.exports = {
       path: `${__dirname}/static/`,
     },
   },
+  {
+    resolve: "gatsby-remark-external-links",
+        options: {
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }
+  }
 ],
   siteMetadata: {
     title: 'Web Developer',
