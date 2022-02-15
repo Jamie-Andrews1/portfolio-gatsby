@@ -1,33 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
-
+:root {
+  --font-size: 1.2rem;
+  --font-color: #121212;
+  --background-color: #ffff;
+  --nav-border: #121212;
+  --projectBtn: #d42990;
+  --email: rgb(44, 44, 235);
+  --projectsClr: #808080;
+}
+:root.dark {
+  --font-color: rgb(195, 92, 195);
+  --backgound-color: #121212;
+  --nav-border: #ffff;
+  --projectBtn: #ccc;
+  --email: rgb(204, 204, 58);
+  --projectsClr: #ccc;
+}
 * {
   margin: 0 10px;
   padding: 0;
   text-decoration: none;
   font-family: "Montserrat";
-  color: white;
+  font-size: var(--font-size);
+  color: var(--font-color);
 }
-html,
-body {
-  height: auto;
-  width: 100%;
+html {
+  height: 100%;
+}
+h1 {
+  font-size: clamp(3rem, 10vw, 1.5rem);
+}
+h2 {
+  font-size: clamp(2rem, 10vw, 1.2rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 10vw, 1rem);
+  font-weight: 400;
+}
+.title {
+  color: #ccc;
 }
 body {
-  position: relative;
-  background-color: #0504aa;
-  overflow-x: hidden;
+  background: var(--backgound-color);
+  transition: all 0.5s;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+.about {
+  padding-top: 20px;
+}
+.about h1 {
+  text-align: center;
+  margin: 2rem 0;
+}
+.about p {
+  font-size: clamp(1.2rem, 1.3vw, 0.75rem);
+  max-width: 75ch;
 }
 p {
   margin: 16px auto;
   font-size: 1.3rem;
-  line-height: 1.5em;
-}
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: -2rem;
-  width: 200%;
-  z-index: -10;
+  line-height: 1.6em;
 }
 .layout {
   max-width: 1200px;
@@ -49,11 +84,32 @@ nav a {
   padding-bottom: 8px;
   border-bottom: 3px solid transparent;
 }
-nav a:hover {
-  border-color: white;
+nav .links a:hover {
+  border-color: var(--nav-border);
+}
+.themeBtn {
+  background-color: transparent;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+.themeBtn:hover {
+  cursor: pointer;
+  animation: grow 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+footer {
+  margin-top: auto;
 }
 footer p {
   text-align: center;
-  color: #bbb;
+  color: var(--font-color);
   margin: 40px auto;
 }

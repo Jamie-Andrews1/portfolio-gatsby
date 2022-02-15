@@ -9,7 +9,7 @@ export default function Projects({ data }) {
   return (
     <Layout>
       <div className={styles.portfolio}>
-        <h2>Portfolio</h2>
+        <h1>Portfolio</h1>
         <h3>Projects & Websites I've Created</h3>
         <div className={styles.projects}>
           {projects.map(project => (
@@ -39,7 +39,7 @@ query ProjectsPage {
         slug
         thumb {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH,height: 400)
           }
         }
       }

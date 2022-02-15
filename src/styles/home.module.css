@@ -1,30 +1,29 @@
 .header {
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50vmin, 1fr));
-  grid-gap: 40px;
-  align-items: center;
-}
-.header h2 {
-  font-size: 4rem;
+  gap: 40px;
+  place-items: center;
 }
 .header h3 {
-  font-size: 3rem;
-  font-weight: 400;
   margin-bottom: 20px;
 }
 .header p a:hover {
-  color: yellow;
+  color: var(--email);
   text-decoration: underline;
 }
-
+.image {
+  padding: 0;
+  border-radius: 50%;
+}
 .btn {
   display: inline-block;
-  background: #d42990;
+  background: var(--projectBtn);
   padding: 10px 16px;
   border-radius: 10px;
   margin-top: 20px;
   font-weight: 500;
 }
 .btn:hover {
-  background-color: #0504aa;
+  opacity: 0.5;
 }
