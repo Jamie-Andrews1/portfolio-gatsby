@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react'
 import Layout from '../components/Layout';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from '../styles/project-details.module.css'
 
 export default function projectDetails({ data }) {
@@ -14,10 +14,11 @@ export default function projectDetails({ data }) {
       <h3>{stack}</h3>
       <Link to={url}>
       <div className={styles.featured}>
-        <Img fluid={featuredImg.childImageSharp.fluid} />
+        <GatsbyImage image={featuredImg.childImageSharp.gatsbyImageData} alt={"picture"} />
       </div>
       </Link>
-      <div className={styles.html} dangerouslySetInnerHTML={{ __html: html }} />
+      <div className={styles.html} 
+      dangerouslySetInnerHTML={{ __html: html }} />
     </div>
     </Layout>
   )
@@ -31,9 +32,7 @@ query ProjectsDetails($slug: String) {
       stack
       featuredImg {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+            gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       url

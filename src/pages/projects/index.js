@@ -39,7 +39,7 @@ query ProjectsPage {
         slug
         thumb {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH,height: 400)
+            gatsbyImageData(layout: CONSTRAINED,height: 400)
           }
         }
       }

@@ -3,6 +3,8 @@
 }
 .portfolio > h1 {
   margin-top: 2rem;
+  display: flex;
+  place-content: center;
 }
 .portfolio > h2 {
   margin-top: 80px;
