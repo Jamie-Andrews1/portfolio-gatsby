@@ -7,11 +7,20 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-postcss`,
   {
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `projects`,
       path: `${__dirname}/src/projects/`,
+    },
+  },
+  {
+    resolve: `gatsby-plugin-postcss`,
+    options: {
+      cssLoaderOptions: {
+        camelCase: false,
+      },
     },
   },
   {

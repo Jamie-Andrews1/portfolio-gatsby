@@ -35,11 +35,6 @@ function switchTheme(e) {
   }    
 }
 
-// function switchTheme(){
-  //   const newTheme = theme === 'light' ? 'dark' : 'light';
-  //   setTheme(newTheme)
-  // }
-
   return (
     <div className='wrapper'>
       <Helmet className="title" title={'Welcome! 😎'} defer={false}/>
