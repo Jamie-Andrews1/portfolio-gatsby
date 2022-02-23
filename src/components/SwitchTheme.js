@@ -2,7 +2,9 @@ import React from 'react';
 import '../styles/global.css'
 
 export default function SwitchTheme({switchTheme, theme}) {
-
+  if (typeof window === 'undefined') {
+  return null
+  }
   return (
       <div className="theme-switch-wrapper">
       <label className="theme-switch" htmlFor="checkbox">

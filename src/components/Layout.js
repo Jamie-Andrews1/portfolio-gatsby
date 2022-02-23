@@ -1,45 +1,35 @@
-import React, { useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import Navbar from './Navbar'
 import '../styles/global.css'
-import useLocalStorage from "use-local-storage";
+// import useLocalStorage from "use-local-storage";
 import SwitchTheme from "./SwitchTheme";
 import { Helmet } from 'react-helmet'
 
 export default function Layout({ children }) {
-const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
-
-const [check, setCheck] = useLocalStorage('checkbox', true)
+let myTheme
+if (typeof window !== `undefined`) {
+  myTheme = window.__theme
+}
+// const [theme, setTheme] = useLocalStorage('theme', 'dark' ? 'dark' : 'light');
+const [color, setColor] = useState(myTheme)
+console.log(`theme is ${color}`)
 
 useEffect(() => {
-  window.__theme = theme
-  
-  if (theme === 'dark') {
-    document.documentElement.className = 'dark';
-  } else {
-    document.documentElement.className = '';
+  setColor(window.__theme)
+  window.__onThemeChange = () => {
+    setColor(window.__theme)
   }
-}, [theme, check])
+}, [])
 
-function switchTheme(e) {
-  if (e.target.checked) {
-      document.documentElement.className = 'dark'
-      setTheme('dark')
-      setCheck(true)
-  }
-  else {
-      document.documentElement.className = ''
-      setTheme('light')
-      setCheck(false)
-  }    
+function switchTheme() {
+      window.__setPreferredTheme(myTheme === 'dark' ? 'light' : 'dark')
 }
 
   return (
     <div className='wrapper'>
       <Helmet className="title" title={'Welcome! 😎'} defer={false}/>
       <Navbar/>
-      <SwitchTheme className="switch" switchTheme={switchTheme} theme={theme}/>
+      <SwitchTheme className="switch" switchTheme={switchTheme} theme={color} />
       <div className="content">
         { children }
       </div>
