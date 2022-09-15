@@ -1,6 +1,6 @@
 ---
 title: Movie Searcher
-stack: React CSS
+stack: React | CSS
 slug: movie-searcher
 thumb: ../images/thumbs/MovieSearch.png
 featuredImg: ../images/featured/MovieSearch-banner.png

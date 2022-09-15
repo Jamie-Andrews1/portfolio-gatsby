@@ -1,6 +1,6 @@
 ---
 title: Windows Website
-stack: Gatsby Contentful
+stack: Gatsby | Contentful
 slug: window-company
 thumb: ../images/thumbs/windows.png
 featuredImg: ../images/featured/windows-banner.png

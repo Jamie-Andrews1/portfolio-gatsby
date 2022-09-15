@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 :root {
+  --width: 300px;
+  --x-speed: 13s;
+  --y-speed: 7s;
+  --transition-speed: 2.2s;
   --font-size: 1.2rem;
   --font-color: #121212;
   --background-color: #ffff;
   --nav-border: #121212;
   --projectBtn: #da3e9c;
-  --email: rgb(44, 44, 235);
+  --email: #2c2ceb;
   --projectsClr: #808080;
 }
 :root.dark {
@@ -40,6 +44,14 @@ h3 {
 .title {
   color: #ccc;
 }
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.content {
+  flex-grow: 1;
+}
 body {
   background: var(--backgound-color);
   transition: all 0.5s;
@@ -71,7 +83,8 @@ p {
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 40px auto;
+  margin: 40px 0;
+  align-items: center;
 }
 nav .links {
   display: inline-block;
@@ -99,24 +112,6 @@ nav .links a:hover {
   }
   nav a {
     margin-left: 0;
-  }
-}
-.themeBtn {
-  background-color: transparent;
-  padding: 10px 16px;
-  border-radius: 10px;
-}
-.themeBtn:hover {
-  cursor: pointer;
-  animation: grow 1s;
-  animation-fill-mode: forwards;
-}
-@keyframes grow {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
   }
 }
 footer {
@@ -180,4 +175,75 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+:global(.gatsby-image-wrapper-constrained).image {
+  display: none;
+  width: 30px;
+}
+@media (min-width: 1400px) {
+  :global(.gatsby-image-wrapper-constrained).image {
+    display: block;
+  }
+}
+/*  bubble css  */
+.wrap {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+.el {
+  width: var(--width);
+  height: var(--width);
+  border-radius: 50%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
+    inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+  transition: border-radius var(--transition-speed) linear;
+  height: 200px;
+  position: absolute;
+  width: 200px;
+}
+.el-wrap.x2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.el::after {
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 70%
+  ); /* Chrome10+,Safari5.1+ */
+  border-radius: 50%;
+  box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+  content: "";
+  height: 180px;
+  left: 10px;
+  position: absolute;
+  width: 180px;
+}
+.x {
+  animation: x var(--x-speed) linear infinite alternate;
+}
+.x2 {
+  animation: x2 var(--x-speed) linear infinite alternate;
+}
+.y {
+  animation: y var(--y-speed) linear infinite alternate;
+}
+
+@keyframes x {
+  100% {
+    transform: translateX(calc(50vw - var(--width)));
+  }
+}
+@keyframes x2 {
+  100% {
+    transform: translateX(calc(-50vw var(--width)));
+  }
+}
+@keyframes y {
+  100% {
+    transform: translateY(calc(50vw - var(--width)));
+  }
 }

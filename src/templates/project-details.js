@@ -13,6 +13,7 @@ export default function projectDetails({ data }) {
       <h2>{title}</h2>
       <h3>{stack}</h3>
       <Link to={url}>
+        <p>View Site</p>
       <div className={styles.featured}>
         <GatsbyImage image={featuredImg.childImageSharp.gatsbyImageData} alt={"picture"} />
       </div>

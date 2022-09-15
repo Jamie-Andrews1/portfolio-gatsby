@@ -1,6 +1,6 @@
 ---
 title: Mini Shop
-stack: Node Express React front end
+stack: Node Express | MongoDb | React front end
 slug: mini-shop
 thumb: ../images/thumbs/shop.png
 featuredImg: ../images/featured/shop-banner.png
@@ -9,7 +9,7 @@ url: https://cake-eater.hopto.org/
 
 ### React with Express backend
 
-I built this project from scratch using what i have learned up to now, and included some authentication using json web tokens. Added mongoDb in for the storage.
+I built this project from scratch using what i have learned up to now, and included some user authentication using json web tokens. Added mongoDb in for the storage.
 I have gone between both storing the images in base64 encoding to the MongoDb database, and having them stored locally and the link uploaded to database. Code for both is available.
 
 There is full CRUD operations and authentication.

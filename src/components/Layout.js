@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from './Navbar'
 import '../styles/global.css'
-// import useLocalStorage from "use-local-storage";
 import SwitchTheme from "./SwitchTheme";
 import { Helmet } from 'react-helmet'
 
@@ -10,7 +9,6 @@ let myTheme
 if (typeof window !== `undefined`) {
   myTheme = window.__theme
 }
-// const [theme, setTheme] = useLocalStorage('theme', 'dark' ? 'dark' : 'light');
 const [color, setColor] = useState(myTheme)
 console.log(`theme is ${color}`)
 
