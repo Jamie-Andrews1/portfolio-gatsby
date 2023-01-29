@@ -13,7 +13,7 @@ export default function about() {
             most efficient way.
         </p>
         <p>    
-            Enthusiastic about writing code, and learning new things I have been self teaching for over a year. From starting with Html and Css, moving on to javasript. Then learning React and using gatsby with contentful.  Creating a full MERN stack site and Hosting it with digital ocean and Caddy server, and constantly learning and creating new things.</p>
+            Enthusiastic about writing code, and learning new things I have been self teaching for over a year. From starting with Html and Css, moving on to Javascript. Then learning React and using Gatsby with Contentful.  Creating a full MERN stack site and Hosting it with digital ocean and Caddy server, and constantly learning and creating new things.</p>
       </div>
     </Layout>
   )
