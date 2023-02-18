@@ -20,25 +20,25 @@ export default function Home({ data }) {
           <FontAwesomeIcon className="fa-brands fa-github fa-2x" icon={faGithub} />
           </a>
         </div>
-        {/* <div className="wrap" >
+        <GatsbyImage className={styles.image} image={data.file.childImageSharp.gatsbyImageData} alt={"picture"}/>
+      </section>
+        <div className="wrap" >
           <div className="el-wrap x">
             <div className="el y"></div>
           </div>
           <div className="el-wrap x2">
             <div className="el y"></div>
           </div>
-        </div> */}
-        <GatsbyImage className={styles.image} image={data.file.childImageSharp.gatsbyImageData} alt={"picture"}/>
-      </section>
+        </div>
     </Layout>
   )
 }
 
 export const query = graphql`
 query People {
-  file(relativePath: {eq: "me.jpg"}) {
+  file(relativePath: {eq: "programming.png"}) {
     childImageSharp {
-      gatsbyImageData(layout: CONSTRAINED, height: 400,placeholder: BLURRED)
+      gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
     }
   }
 }`

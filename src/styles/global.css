@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 :root {
   --width: 300px;
-  --x-speed: 13s;
+  --x-speed: 10s;
   --y-speed: 7s;
+  --x2-speed: 14s;
   --transition-speed: 2.2s;
   --font-size: 1.2rem;
   --font-color: #121212;
@@ -29,8 +30,8 @@
   color: var(--font-color);
 }
 html {
-  height: 100%;
-}
+  min-height: 100svh;
+  min-height: 100vh;}
 h1 {
   font-size: clamp(3rem, 10vw, 1.5rem);
 }
@@ -55,8 +56,8 @@ h3 {
 body {
   background: var(--backgound-color);
   transition: all 0.5s;
+  min-height: 100svh;
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
 }
@@ -179,7 +180,7 @@ input:checked + .slider:before {
 :global(.gatsby-image-wrapper-constrained).image {
   display: none;
   width: 30px;
-}
+} 
 @media (min-width: 1400px) {
   :global(.gatsby-image-wrapper-constrained).image {
     display: block;
@@ -187,8 +188,7 @@ input:checked + .slider:before {
 }
 /*  bubble css  */
 .wrap {
-  width: 400px;
-  height: 400px;
+  width: 50%;
   position: relative;
 }
 .el {
@@ -202,10 +202,15 @@ input:checked + .slider:before {
   position: absolute;
   width: 200px;
 }
+.el-wrap.x {
+  position: absolute;
+  top: 0;
+  right: 50%;
+}
 .el-wrap.x2 {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 50%;
 }
 .el::after {
   background: -webkit-radial-gradient(
@@ -213,7 +218,8 @@ input:checked + .slider:before {
     ellipse cover,
     rgba(255, 255, 255, 0.5) 0%,
     rgba(255, 255, 255, 0) 70%
-  ); /* Chrome10+,Safari5.1+ */
+  ); 
+  /* Chrome10+,Safari5.1+ */
   border-radius: 50%;
   box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
   content: "";
@@ -221,12 +227,12 @@ input:checked + .slider:before {
   left: 10px;
   position: absolute;
   width: 180px;
-}
+} 
 .x {
   animation: x var(--x-speed) linear infinite alternate;
 }
 .x2 {
-  animation: x2 var(--x-speed) linear infinite alternate;
+  animation: x var(--x2-speed) linear infinite alternate;
 }
 .y {
   animation: y var(--y-speed) linear infinite alternate;
@@ -239,11 +245,11 @@ input:checked + .slider:before {
 }
 @keyframes x2 {
   100% {
-    transform: translateX(calc(-50vw var(--width)));
+    transform: translateX(calc(70vw - var(--width)));
   }
 }
 @keyframes y {
   100% {
-    transform: translateY(calc(50vw - var(--width)));
+    transform: translateY(calc(-50vh - var(--width)));
   }
-}
+} 
