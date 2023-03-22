@@ -12,24 +12,15 @@ export default function Home({ data }) {
     <Layout>
       <section className={styles.header}>
         <div>
-          <h1>Hello, I'm</h1>
-          <h1>Jamie Andrews</h1>
+          <h1>Welcome...</h1>
           <p><a href="mailto:andrews_j@live.co.uk">Email me @</a></p>
           <Link to="/projects" className={styles.btn}>My Portfolio Projects</Link>
-          <a href="https://github.com/Jamie-Andrews1" >
+          <a className={styles.git} href="https://github.com/Jamie-Andrews1" >
           <FontAwesomeIcon className="fa-brands fa-github fa-2x" icon={faGithub} />
           </a>
         </div>
         <GatsbyImage className={styles.image} image={data.file.childImageSharp.gatsbyImageData} alt={"picture"}/>
       </section>
-        <div className="wrap" >
-          <div className="el-wrap x">
-            <div className="el y"></div>
-          </div>
-          <div className="el-wrap x2">
-            <div className="el y"></div>
-          </div>
-        </div>
     </Layout>
   )
 }

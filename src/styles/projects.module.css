@@ -25,15 +25,11 @@
   color: var(--projectsClr);
   margin-top: 4px;
 }
+.images{
+  transition: all 1s ease;
+}
 .images:hover {
-  animation: grow 1s;
-  animation-fill-mode: forwards;
+  scale: 1.2;
 }
-@keyframes grow {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
+
+

@@ -30,16 +30,20 @@
 }
 .image {
   padding: 0;
-  width: 70%;
+  width: 60%;
 }
 .btn {
   display: inline-block;
   background: var(--projectBtn);
   padding: 10px 16px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin: 20px 20px;
   font-weight: 500;
+  font-size: clamp(0.5rem, 10vw, 1rem);
 }
 .btn:hover {
-  opacity: 0.5;
+  opacity: 0.7;
+}
+.git:hover{
+  opacity: 0.7;
 }

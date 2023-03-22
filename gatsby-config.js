@@ -46,7 +46,7 @@ module.exports = {
   }
 ],
   siteMetadata: {
-    title: 'Web Developer',
+    title: 'Jamie Andrews',
     desctription: 'web dev portfolio'
   }
 }

@@ -10,7 +10,6 @@ if (typeof window !== `undefined`) {
   myTheme = window.__theme
 }
 const [color, setColor] = useState(myTheme)
-console.log(`theme is ${color}`)
 
 useEffect(() => {
   setColor(window.__theme)
@@ -32,7 +31,7 @@ function switchTheme() {
         { children }
       </div>
       <footer>
-        <p>Copyright 2022 Jamie</p>
+        <p>&copy; 2023 Jamie</p>
       </footer>
       </div>
   )
