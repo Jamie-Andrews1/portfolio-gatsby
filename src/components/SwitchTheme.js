@@ -10,6 +10,7 @@ export default function SwitchTheme({ switchTheme, theme }) {
       <input
         type="checkbox"
         id="checkbox"
+        tabIndex="0"
         onClick={switchTheme}
         defaultChecked={theme === "dark" ? true : false}
         aria-label="Toggle Dark Mode"

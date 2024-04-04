@@ -11,16 +11,16 @@
 .header p a {
   font-weight: 500;
   background: linear-gradient(
-    to right,
-    rgba(100, 200, 200, 1),
-    rgba(100, 200, 200, 1)
-  ),
-  linear-gradient(
-    to right,
-    rgba(255, 0, 0, 1),
-    rgba(255, 0, 180, 1),
-    rgba(0, 100, 200, 1)
-);
+      to right,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
@@ -32,12 +32,14 @@
 .image {
   padding: 0;
   width: 60%;
+  visibility: var(--main-image);
 }
 .btn {
   display: inline-block;
   background: var(--projectBtn);
   padding: 10px 16px;
   border-radius: 10px;
+  border: 2px solid black;
   margin: 20px 20px 20px 0;
   font-weight: 500;
   font-size: clamp(0.5rem, 10vw, 1rem);
@@ -45,6 +47,6 @@
 .btn:hover {
   opacity: 0.7;
 }
-.git:hover{
+.git:hover {
   opacity: 0.7;
 }

@@ -21,10 +21,15 @@
 .featured {
   margin-bottom: 40px;
 }
-.featured :hover{
+.featured :hover {
   opacity: 0.8;
   background-color: rgba(160, 160, 160);
 }
 img {
   inline-size: 100vw;
+}
+@media (max-width: 800px) {
+  .details h2 {
+    margin-top: 40px;
+  }
 }

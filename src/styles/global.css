@@ -7,10 +7,11 @@
   --font-size: 1.2rem;
   --font-color: #121212;
   --background: #ffff;
-  --Hero: url('../images/ocean.jpg');
+  --Hero: url("../images/ocean.jpg");
   --nav-border: #121212;
   --projectBtn: #da3e9c;
   --email: #2c2ceb;
+  --main-image: hidden;
   --projectsClr: #808080;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--menu-gap) * 2);
 }
@@ -18,6 +19,7 @@
   --font-color: #d388d3;
   --background: #121212;
   --Hero: #121212;
+  --main-image: visible;
   --nav-border: #ffff;
   --projectBtn: #330000;
   --email: #cccc3a;
@@ -32,16 +34,17 @@
   font-size: var(--font-size);
   color: var(--font-color);
 }
-html, body {
+html,
+body {
   background: var(--background);
   background-size: cover;
-  transition: all 0.5s;
   min-height: 100svh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-html, body:has(section){
+html,
+body:has(section) {
   background: var(--Hero);
   background-size: cover;
 }
@@ -127,7 +130,6 @@ footer p {
   top: 0;
   transition: 0.4s;
 }
-
 .slider:before {
   background-color: #fff;
   bottom: 4px;
@@ -158,13 +160,13 @@ input:checked + .slider:before {
 :global(.gatsby-image-wrapper-constrained).image {
   display: none;
   width: 30px;
-} 
+}
 @media (min-width: 1400px) {
   :global(.gatsby-image-wrapper-constrained).image {
     display: block;
   }
 }
-.hamburger-menu{
+.hamburger-menu {
   position: absolute;
   right: 20px;
   top: 30px;
@@ -174,43 +176,44 @@ input:checked + .slider:before {
   width: max-content;
   cursor: pointer;
   z-index: 2;
-  --x-width:calc((var(--hamburger-height)) * 1.41421356237
-  )
+  --x-width: calc((var(--hamburger-height)) * 1.41421356237);
 }
 .hamburger-menu:before,
 .hamburger-menu:after,
-.hamburger-menu input{
-  content: '';
+.hamburger-menu input {
+  content: "";
   border-radius: 10px;
   width: var(--bar-width);
   height: var(--bar-height);
   background: var(--font-color);
-  transition: opacity var(--transition-timing), width var(--transition-timing), rotate var(--transition-timing), translate var(--transition-timing), background-color var(--transition-timing);
+  transition: opacity var(--transition-timing), width var(--transition-timing),
+    rotate var(--transition-timing), translate var(--transition-timing),
+    background-color var(--transition-timing);
   transform-origin: left center;
 }
-.hamburger-menu input{
+.hamburger-menu input {
   appearance: none;
   padding: 0;
   margin: 0;
   outline: none;
   pointer-events: none;
 }
-.hamburger-menu input:checked{
+.hamburger-menu input:checked {
   opacity: 0;
 }
-.hamburger-menu:has(input:checked):before{
-  background-color: var(--background) ;
+.hamburger-menu:has(input:checked):before {
+  background-color: var(--background);
   rotate: 45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / -2);
 }
-.hamburger-menu:has(input:checked):after{
-  background-color: var(--background) ;
+.hamburger-menu:has(input:checked):after {
+  background-color: var(--background);
   rotate: -45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / 2);
 }
-.menu{
+.menu {
   display: none;
   flex-direction: column;
   transition: translate var(--transition-timing);
@@ -224,19 +227,19 @@ input:checked + .slider:before {
   clip-path: inset(0 -100vmax);
   position: absolute;
 }
-.menu a{
+.menu a {
   padding: 20px 0;
   color: var(--background);
 }
-.hamburger-menu:has(input:checked) + .menu{
+.hamburger-menu:has(input:checked) + .menu {
   translate: 0;
 }
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 40px 0 ;
-  align-items:baseline;
-  text-shadow:1px 2px 2px rgba(128, 128, 128, 1);
+  margin: 40px 0;
+  align-items: baseline;
+  text-shadow: 1px 2px 2px rgba(128, 128, 128, 1);
 }
 nav .links {
   display: inline-block;
@@ -248,98 +251,102 @@ nav a {
   padding-bottom: 8px;
   border-bottom: 3px solid transparent;
 }
-nav h2 a{
+nav h2 a {
   margin-left: 20px;
 }
-nav .links a{
+nav .links a {
   transition: border-color 1s ease;
   margin-right: 20px;
 }
 nav .links a:hover {
   border-color: var(--nav-border);
 }
-.hamburger-menu:has(input:checked) ~ nav h2 a{
+.hamburger-menu:has(input:checked) ~ nav h2 a {
   color: var(--background);
 }
-.contact{
+.contact {
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.contact :is(h1, h2){
+.contact :is(h1, h2) {
   text-align: center;
   margin: 2rem 0;
   width: max-content;
   transition: scale 1s ease;
 }
-.contact h2:hover{
+.contact h2:hover {
   scale: 0.9;
 }
-.contact h2 a{
+.contact h2 a {
   border-bottom: 2px solid currentColor;
 }
-.contact p{
+.contact p {
   font-size: clamp(1.2rem, 1.3vw, 1.5rem);
 }
 
 @media only screen and (max-width: 800px) {
-  .hamburger-menu{
+  .hamburger-menu {
     display: flex;
   }
-  .menu{
+  .menu {
     display: flex;
   }
-  .links a{
+  .links a {
     display: none;
   }
-  nav h2{
+  nav h2 {
     position: absolute;
     z-index: 1;
     left: 10px;
     top: 20px;
   }
   /* switch smaller */
-  .theme-switch-wrapper{
+  .theme-switch-wrapper {
     left: 25%;
     top: 60%;
     margin-left: 10px;
   }
-.theme-switch{
-  height: 17px;
-  width: 30px;
-}
-.slider{
-  border-radius: 17px;
-}
-.slider:before{
-  border-radius: 17px;
-  height:13px;
-  width:13px;
-  left: 2px;
-  bottom: 2px;
-}input:checked + .slider:before {
-  transform: translateX(13px);
-}
+  .theme-switch {
+    height: 17px;
+    width: 30px;
+  }
+  .slider {
+    border-radius: 17px;
+  }
+  .slider:before {
+    border-radius: 17px;
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+  }
+  input:checked + .slider:before {
+    transform: translateX(13px);
+  }
 
-.slider.round {
-  border-radius: 17px;
-  margin: 0;
-}
-.slider.round:before {
-  border-radius: 50%;
-}
+  .slider.round {
+    border-radius: 17px;
+    margin: 0;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
 }
 @media only screen and (max-width: 600px) {
   * {
     margin: 0 3px;
   }
-  .theme-switch-wrapper{
+  .theme-switch-wrapper {
     margin-left: 50px;
+  }
+  :root {
+    --projectBtn: #da3e9c50;
   }
 }
 @media only screen and (max-width: 400px) {
-  *{
+  * {
     margin: 0;
   }
   nav .links {
