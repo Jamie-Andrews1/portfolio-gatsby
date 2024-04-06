@@ -118,7 +118,11 @@ footer p {
   width: 60px;
 }
 .theme-switch input {
-  display: none;
+  width: inherit;
+  height: inherit;
+}
+.theme-switch input:focus-visible {
+  outline-offset: 10px;
 }
 .slider {
   background-color: #ccc;
@@ -178,6 +182,9 @@ input:checked + .slider:before {
   z-index: 2;
   --x-width: calc((var(--hamburger-height)) * 1.41421356237);
 }
+.hamburger-menu input:focus-visible {
+  outline-offset: calc(var(--bar-width) / 4);
+}
 .hamburger-menu:before,
 .hamburger-menu:after,
 .hamburger-menu input {
@@ -195,7 +202,6 @@ input:checked + .slider:before {
   appearance: none;
   padding: 0;
   margin: 0;
-  outline: none;
   pointer-events: none;
 }
 .hamburger-menu input:checked {
@@ -212,6 +218,12 @@ input:checked + .slider:before {
   rotate: -45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / 2);
+}
+.hamburger-menu:has(input:checked) + .menu {
+  translate: 0;
+}
+.hamburger-menu:has(input:checked) ~ nav h2 a {
+  color: var(--background);
 }
 .menu {
   display: none;
@@ -230,9 +242,6 @@ input:checked + .slider:before {
 .menu a {
   padding: 20px 0;
   color: var(--background);
-}
-.hamburger-menu:has(input:checked) + .menu {
-  translate: 0;
 }
 nav {
   display: grid;
@@ -260,9 +269,6 @@ nav .links a {
 }
 nav .links a:hover {
   border-color: var(--nav-border);
-}
-.hamburger-menu:has(input:checked) ~ nav h2 a {
-  color: var(--background);
 }
 .contact {
   padding-top: 20px;
