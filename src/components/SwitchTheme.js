@@ -17,8 +17,5 @@ export default function SwitchTheme({ switchTheme, theme }) {
       />
       <div className="slider round"></div>
     </label>
-
-    // Text style toggle switch
-    // <button className='themeBtn' onClick={switchTheme}>Switch to {theme === 'Light' ? 'Dark' : 'Light'} Theme</button>
   )
 }
